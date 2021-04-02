@@ -6,7 +6,19 @@ namespace git
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            int n = int.Parse(Console.ReadLine());
+            int[] arr = new int[n];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = i;
+
+            }
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(arr[i]);
+            }
+
+            
         }
 
     }
