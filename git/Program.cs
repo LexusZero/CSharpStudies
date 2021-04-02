@@ -17,9 +17,6 @@ namespace git
             {
                 Console.Write(arr[i]);
             }
-
-            
         }
-
     }
 }
