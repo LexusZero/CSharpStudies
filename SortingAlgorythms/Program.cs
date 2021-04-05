@@ -11,9 +11,20 @@ namespace SortingAlgorythms
             InitializeArray(array);
             int[] copy = new int[size];
             Array.Copy(array, copy, size);
-            MergeSort(array, copy, 0, size - 1);
+            InsertionSort(array);
             PrintArray(array);
         }
+        static void InsertionSort(int[] array)
+        {
+            for (int i = 1; i < array.Length; i++)
+            {
+                for (int j = i; j > 0 && array[j - 1] > array[j]; j--)
+                {
+                    Swap(array, j, j - 1);
+                }
+            }
+        }
+
 
         static void InitializeArray(int[] array)
         {
@@ -46,11 +57,11 @@ namespace SortingAlgorythms
 
         static void BubbleSort(int[] array)
         {
-            for (int i = array.Length - 1; i >= 0; i--) 
+            for (int i = array.Length - 1; i >= 0; i--)
             {
-                for (int j = i + 1; j < array.Length; j++)  
+                for (int j = i + 1; j < array.Length; j++)
                 {
-                    if (array[j] < array[j - 1])        
+                    if (array[j] < array[j - 1])
                     {
                         Swap(array, j, j - 1);
                     }
@@ -71,7 +82,7 @@ namespace SortingAlgorythms
             int leftIndex = startIndex;
             int rightIndex = middleIndex + 1;
             int currentIndex = startIndex;
-            
+
             while (rightIndex <= endIndex && leftIndex <= middleIndex)
             {
                 if (copy[leftIndex] <= copy[rightIndex])
