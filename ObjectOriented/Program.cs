@@ -10,8 +10,10 @@ namespace ObjectOriented
             int y = 0;
             int x2 = 10;
             int y2 = 10;
+            int x3 = 20;
+            int y3 = 10;
             char current = '1';
-            
+
             while (true)
             {
                 Console.Clear();
@@ -19,26 +21,86 @@ namespace ObjectOriented
                 Console.Write(":D");
                 Console.SetCursorPosition(x2, y2);
                 Console.Write(":c");
-     
-                char move = Console.ReadKey().KeyChar;
+                Console.SetCursorPosition(x3, y3);
+                Console.Write("D:");
 
-                if (move == 'w')
+                char move = Console.ReadKey().KeyChar;
+                if (move == '1')
                 {
-                    y--;
+                    current = '1';
                 }
-                else if (move == 'a')
+                else if (move == '2')
                 {
-                    x--;
+                    current = '2';
                 }
-                else if (move == 's')
+                else if (move == '3')
                 {
-                    y++;
+                    current = '3';
                 }
-                else if (move == 'd')
+
+                if (current == '1')
                 {
-                    x++;
+
+
+                    if (move == 'w')
+                    {
+                        y--;
+                    }
+                    else if (move == 'a')
+                    {
+                        x--;
+                    }
+                    else if (move == 's')
+                    {
+                        y++;
+                    }
+                    else if (move == 'd')
+                    {
+                        x++;
+                    }
+                }
+                else if (current == '2')
+                {
+                    if (move == 'w')
+                    {
+                        y2--;
+                    }
+                    else if (move == 'a')
+                    {
+                        x2--;
+                    }
+                    else if (move == 's')
+                    {
+                        y2++;
+                    }
+                    else if (move == 'd')
+                    {
+                        x2++;
+                    }
+                }
+                else if (current == '3')
+                {
+
+
+                    if (move == 'w')
+                    {
+                        y3--;
+                    }
+                    else if (move == 'a')
+                    {
+                        x3--;
+                    }
+                    else if (move == 's')
+                    {
+                        y3++;
+                    }
+                    else if (move == 'd')
+                    {
+                        x3++;
+                    }
                 }
             }
         }
+
     }
 }
