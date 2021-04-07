@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "git", "git\git.csproj", "{16C00DE3-921B-4F3C-976B-73FEB0F27E1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortingAlgorythms", "SortingAlgorythms\SortingAlgorythms.csproj", "{113CB07A-E0E3-47DF-AB21-921634D0A499}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SortingAlgorythms", "SortingAlgorythms\SortingAlgorythms.csproj", "{113CB07A-E0E3-47DF-AB21-921634D0A499}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectOriented", "ObjectOriented\ObjectOriented.csproj", "{B2380771-CC1A-4830-A010-8A3B000CC3FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{113CB07A-E0E3-47DF-AB21-921634D0A499}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{113CB07A-E0E3-47DF-AB21-921634D0A499}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{113CB07A-E0E3-47DF-AB21-921634D0A499}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2380771-CC1A-4830-A010-8A3B000CC3FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2380771-CC1A-4830-A010-8A3B000CC3FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2380771-CC1A-4830-A010-8A3B000CC3FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2380771-CC1A-4830-A010-8A3B000CC3FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

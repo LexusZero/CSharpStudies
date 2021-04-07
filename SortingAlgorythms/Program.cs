@@ -11,7 +11,7 @@ namespace SortingAlgorythms
             InitializeArray(array);
             int[] copy = new int[size];
             Array.Copy(array, copy, size);
-            InsertionSort(array);
+            MergeSort(array, copy, 0, size - 1);
             PrintArray(array);
         }
         static void InsertionSort(int[] array)
@@ -88,15 +88,14 @@ namespace SortingAlgorythms
                 if (copy[leftIndex] <= copy[rightIndex])
                 {
                     array[currentIndex] = copy[leftIndex];
-                    currentIndex++;
                     leftIndex++;
                 }
                 else
                 {
                     array[currentIndex] = copy[rightIndex];
-                    currentIndex++;
                     rightIndex++;
                 }
+                currentIndex++;
             }
 
             while (leftIndex <= middleIndex)
