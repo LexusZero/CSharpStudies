@@ -7,28 +7,25 @@ namespace ObjectOriented
         static void Main(string[] args)
         {
             Smile smile = new Smile();
-            smile.X = 0;
+            smile.X = 0; 
             smile.Y = 0;
             smile.Face = ":D";
             Smile smile2 = new Smile();
             smile2.X = 10;
             smile2.Y = 10;
             smile2.Face = ":c";
-            // Избавиться от x3 и y3 (заменить на объект класса Smile, можно назвать smile3)
-            int x3 = 20; 
-            int y3 = 10;
+            Smile smile3 = new Smile();
+            smile3.X = 20;
+            smile3.Y = 10;
+            smile3.Face = "D:";
             char current = '1';
 
             while (true)
             {
                 Console.Clear();
-                // Заменить эти строчки на вызов Smile.Print
-                Console.SetCursorPosition(smile.X, smile.Y);
-                Console.Write(smile.Face);
-                Console.SetCursorPosition(smile2.X, smile2.Y);
-                Console.Write(smile2.Face);
-                Console.SetCursorPosition(x3, y3);
-                Console.Write("D:");
+                smile.Print();
+                smile2.Print();
+                smile3.Print();
 
                 char move = Console.ReadKey().KeyChar;
               
@@ -47,23 +44,9 @@ namespace ObjectOriented
                 }
                 else if (current == '3')
                 {
-                    if (move == 'w')
-                    {
-                        y3--;
-                    }
-                    else if (move == 'a')
-                    {
-                        x3--;
-                    }
-                    else if (move == 's')
-                    {
-                        y3++;
-                    }
-                    else if (move == 'd')
-                    {
-                        x3++;
-                    }
+                    smile3.Move(move);
                 }
+                 
             }
         }
     }

@@ -1,4 +1,5 @@
-﻿namespace ObjectOriented
+﻿using System;
+namespace ObjectOriented
 {
     class Smile
     {
@@ -27,8 +28,11 @@
         }
 
 
+        //public void Print(int x, int y, string face)
         public void Print()
         {
+            Console.SetCursorPosition(X, Y);
+            Console.Write(Face);
             // Реализовать этот метод
         }
     }
