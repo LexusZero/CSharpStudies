@@ -6,6 +6,18 @@ namespace ObjectOriented
     {
         static void Main(string[] args)
         {
+            int n = Convert.ToInt32(Console.ReadLine());
+            Smile[] smiles = new Smile[n];
+            for (int i = 0; i < smiles.Length; i++)
+            {
+                smiles[i] = new Smile();
+                Console.WriteLine("Input X");
+                smiles[i].X = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Input Y");
+                smiles[i].Y = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Input Face");
+                smiles[i].Face = Console.ReadLine();
+            }
             Smile smile = new Smile();
             smile.X = 0; 
             smile.Y = 0;
@@ -18,14 +30,18 @@ namespace ObjectOriented
             smile3.X = 20;
             smile3.Y = 10;
             smile3.Face = "D:";
-            char current = '1';
+            int current = 1;
 
             while (true)
             {
                 Console.Clear();
-                smile.Print();
-                smile2.Print();
-                smile3.Print();
+                for (int i = 0; i < smiles.Length; i++)
+                {
+                    smiles[i].Print();
+                }
+                //smile.Print();
+                //smile2.Print();
+                //smiles[n].Print();
 
                 char move = Console.ReadKey().KeyChar;
               
@@ -34,18 +50,18 @@ namespace ObjectOriented
                     current = move;
                 }
 
-                if (current.Equals('1'))
+                if (current > 0 && current <= n)
                 {
-                    smile.Move(move);
+                    smiles[n - 1].Move(move);
                 }
-                else if (current == '2')
-                {
-                    smile2.Move(move);
-                }
-                else if (current == '3')
-                {
-                    smile3.Move(move);
-                }
+                //else if (current == '2')
+                //{
+               //     smile2.Move(move);
+                //}
+                //else if (current == '3')
+               // {
+                //    smile3.Move(move);
+                //}
                  
             }
         }
