@@ -1,12 +1,20 @@
 ﻿using System;
-namespace ObjectOriented
+namespace ObjectOriented.Classes
 {
     class Smile
     {
-        public int X;
-        public int Y;
-        public string Face;
-
+        private int X;
+        private int Y;
+        private readonly string Face;
+        private static int Count;
+        public Smile(int x, int y, string face)
+        {
+            X = x;
+            Y = y;
+            Face = face;
+            Count++;
+            Console.WriteLine("Numbers of smiles was created: " +Count);
+        }
         public void Move(char move)
         {
             if (move == 'w')
@@ -33,7 +41,7 @@ namespace ObjectOriented
         {
             Console.SetCursorPosition(X, Y);
             Console.Write(Face);
-            // Реализовать этот метод
+           // Реализовать этот метод
         }
     }
 }
