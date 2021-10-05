@@ -1,9 +1,9 @@
 ﻿using System;
 namespace ObjectOriented.Classes
 {
-    class Smile
+    class Smile : object
     {
-        private int X;
+        protected int X;
         private int Y;
         private readonly string Face;
         private static int Count;
@@ -13,7 +13,8 @@ namespace ObjectOriented.Classes
             Y = y;
             Face = face;
             Count++;
-            Console.WriteLine("Numbers of smiles was created: " +Count);
+            Console.WriteLine("Numbers of smiles was created: " + Count);
+
         }
         public void Move(char move)
         {
@@ -34,14 +35,19 @@ namespace ObjectOriented.Classes
                 X++;
             }
         }
-
-
-        //public void Print(int x, int y, string face)
-        public void Print()
+        public override string ToString()
         {
-            Console.SetCursorPosition(X, Y);
-            Console.Write(Face);
-           // Реализовать этот метод
+            return Face;
         }
+
+        public int GetX()
+        {
+            return X;
+        }
+        public int GetY()
+        {
+            return Y;
+        }
+
     }
 }

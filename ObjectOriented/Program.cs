@@ -23,12 +23,14 @@ namespace ObjectOriented
                 smiles[i] = new Smile(x, y, face);
             }
             int current = 1;
+            
             while (true)
             {
                 Console.Clear();
                 for (int i = 0; i < smiles.Length; i++)
                 {
-                    smiles[i].Print();
+                    Console.SetCursorPosition(smiles[i].GetX(), smiles[i].GetY());
+                    Console.Write(smiles[i].ToString());
                 }
 
                 char move = Console.ReadKey().KeyChar;
