@@ -10,7 +10,7 @@ namespace ObjectOriented.Classes
     {
         public SmileChild() : base(0, 0, "D:")
         {
-            X = 1;
+            x = 1;
         }
     }
 }
