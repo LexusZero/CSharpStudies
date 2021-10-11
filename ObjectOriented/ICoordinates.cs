@@ -2,8 +2,9 @@
 {
     interface ICoordinates
     {
-        int X { get; set; }
-        int Y { get; set; }
+        Coords Coords { get; set; }
+       // int X { get; set; }
+       // int Y { get; set; }
 
         void Move(char move);
     }

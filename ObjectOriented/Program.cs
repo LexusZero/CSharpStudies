@@ -54,16 +54,14 @@ namespace ObjectOriented
                 {
                     objectsWithCoordinates[current - 1].Move(move);
 
-                    if (objectsWithCoordinates[current - 1].X == objectsWithCoordinates[n].X && objectsWithCoordinates[current - 1].Y == objectsWithCoordinates[n].Y)
+                    if (objectsWithCoordinates[current -1].Coords == objectsWithCoordinates[n].Coords)
                     {
-                        objectsWithCoordinates[current - 1].X = objectsWithCoordinates[n + 1].X;
-                        objectsWithCoordinates[current - 1].Y = objectsWithCoordinates[n + 1].Y;
+                        objectsWithCoordinates[current - 1].Coords = objectsWithCoordinates[n + 1].Coords;
                         
                     }
-                    else if (objectsWithCoordinates[current - 1].X == objectsWithCoordinates[n + 1].X && objectsWithCoordinates[current - 1].Y == objectsWithCoordinates[n + 1].Y)
+                    else if (objectsWithCoordinates[current - 1].Coords == objectsWithCoordinates[n + 1].Coords)
                     {
-                        objectsWithCoordinates[current - 1].X = objectsWithCoordinates[n].X;
-                        objectsWithCoordinates[current - 1].Y = objectsWithCoordinates[n].Y;
+                        objectsWithCoordinates[current - 1].Coords = objectsWithCoordinates[n].Coords;
                     }
                         
                 }
@@ -74,9 +72,8 @@ namespace ObjectOriented
 
         private static void PrintObjectWithCoordinates(ICoordinates coordinates)
         {
-            Console.SetCursorPosition(coordinates.X, coordinates.Y);
+            Console.SetCursorPosition(coordinates.Coords.X, coordinates.Coords.Y);
             Console.Write(coordinates.ToString());
-            
         }
     }
 }

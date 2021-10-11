@@ -1,95 +1,40 @@
 ﻿using System;
 namespace ObjectOriented.Classes
 {
-    class Smile : object, ICoordinates
+    class Smile : ICoordinates
     {
-        protected int x;
-        public int X
-        {
-            get { return x; }
-            set
-            {
-                if (value < 0)
-                {
-                    return;
-                }
-                this.x = value;
-            }
-        }
-        private int y;
-        public int Y
-        {
-            get { return y; }
-            set
-            {
-                if (value < 0)
-                {
-                    return;
-                }
-                this.y = value;
-            }
-        }
+        public Coords Coords { get; set; }
         private readonly string face;
-        private static int count;
-
-        public int Id { get; private set; }
 
         public Smile(int x, int y, string face)
         {
-            this.x = x;
-            this.y = y;
+            Coords = new Coords(x, y);
             this.face = face;
-            count++;
-            Console.WriteLine("Numbers of smiles was created: " + count);
-            Id = count;
         }
         public void Move(char move)
         {
+            Coords coords = Coords;
             if (move == 'w')
             {
-                y--;
+                coords.Y--;
             }
             else if (move == 'a')
             {
-                X--;
+                coords.X--;
             }
             else if (move == 's')
             {
-                y++;
+                coords.Y++;
             }
             else if (move == 'd')
             {
-                x++;
+                coords.X++;
             }
+            Coords = coords;
         }
         public override string ToString()
         {
             return face;
-        }
-
-        public int GetX()
-        {
-            return x;
-        }
-        public int GetY()
-        {
-            return y;
-        }
-        public void SetX(int value)
-        {
-            if (value < 0)
-            {
-                return;
-            }
-            this.x = value;
-        }
-        public void SetY(int y)
-        {
-            if (y < 0)
-            {
-                return;
-            }
-            this.y = y;
         }
 
     }

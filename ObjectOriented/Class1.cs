@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ObjectOriented.Classes
+namespace ObjectOriented
 {
-    class SmileChild : Smile
+    class Class1
     {
-        public SmileChild() : base(0, 0, "D:")
-        {
-        }
     }
 }
