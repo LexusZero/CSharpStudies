@@ -33,7 +33,7 @@ namespace ObjectOriented
             }
 
             int current = 1;
-            
+
             while (true)
             {
                 Console.Clear();
@@ -54,16 +54,16 @@ namespace ObjectOriented
                 {
                     objectsWithCoordinates[current - 1].Move(move);
 
-                    if (objectsWithCoordinates[current -1].Coords == objectsWithCoordinates[n].Coords)
+                    if (objectsWithCoordinates[current - 1].Coords == objectsWithCoordinates[n].Coords)
                     {
                         objectsWithCoordinates[current - 1].Coords = objectsWithCoordinates[n + 1].Coords;
-                        
+
                     }
                     else if (objectsWithCoordinates[current - 1].Coords == objectsWithCoordinates[n + 1].Coords)
                     {
                         objectsWithCoordinates[current - 1].Coords = objectsWithCoordinates[n].Coords;
                     }
-                        
+
                 }
 
 

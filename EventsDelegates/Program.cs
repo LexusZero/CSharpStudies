@@ -6,11 +6,12 @@ namespace EventsDelegates
 
     class Program
     {
-        static void MainWithEvents()
+        static void Main()
         {
             Counter counter = new Counter();
             counter.EvenCount += Counter_EvenCount;
             counter.EvenCount += Counter_EvenCount2;
+            counter.DevideByThree += Counter_DivisibleByThree;
             for (int i = 0; i < 8; i++)
             {
                 counter.Increment();
@@ -22,6 +23,7 @@ namespace EventsDelegates
             }
         }
 
+        
 
         private static void Counter_DivisibleByThree(int count)
         {
