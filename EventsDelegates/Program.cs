@@ -8,10 +8,25 @@ namespace EventsDelegates
     {
         static void Main()
         {
+            SubscribeUnsubscribe();
+        }
+
+        static void LamdaExample()
+        {
+            Calculation calculation = (a, b) => a + b;
+            PrintCalculation(calculation, 1, 2);
+        }
+
+        static void SubscribeUnsubscribe()
+        {
             Counter counter = new Counter();
             counter.EvenCount += Counter_EvenCount;
             counter.EvenCount += Counter_EvenCount2;
             counter.DevideByThree += Counter_DivisibleByThree;
+            counter.DevideByThree += delegate (int count)
+            {
+                Console.WriteLine("Anonymous method");
+            };
             for (int i = 0; i < 8; i++)
             {
                 counter.Increment();
@@ -22,8 +37,6 @@ namespace EventsDelegates
                 counter.Increment();
             }
         }
-
-        
 
         private static void Counter_DivisibleByThree(int count)
         {
