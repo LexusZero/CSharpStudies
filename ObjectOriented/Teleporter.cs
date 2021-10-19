@@ -1,9 +1,9 @@
 ﻿using System;
 
-namespace ObjectOriented.Classes
+namespace ObjectOriented
 {
     // телепортирует на другой объект Teleporter
-    class Teleporter : ICoordinates
+    class Teleporter : IMoveable
     {
         public Coords Coords { get; set; }
         public Teleporter(int x, int y)

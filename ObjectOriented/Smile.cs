@@ -1,7 +1,7 @@
 ﻿using System;
-namespace ObjectOriented.Classes
+namespace ObjectOriented
 {
-    class Smile : ICoordinates
+    class Smile : IMoveable
     {
         public Coords Coords { get; set; }
         private readonly string face;

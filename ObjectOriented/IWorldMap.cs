@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace ObjectOriented
 {
-    class Class1
+    interface IWorldMap
     {
+        void Update(char key);
+        void Print();
     }
 }

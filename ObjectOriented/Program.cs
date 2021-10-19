@@ -1,15 +1,32 @@
 ﻿using System;
-using ObjectOriented.Classes;
 
 namespace ObjectOriented
 {
     class Program
     {
-        static void Main(string[] args)
+        // нельзя изменять
+        static void Main()
+        {
+            Coords[] smileCoords = new Coords[] { new Coords(2, 4) };
+            string[] smileFaces = new string[] { ":D" };
+
+            Coords[] teleporterCoords = new Coords[] { new Coords(5, 1), new Coords(1, 5) };
+
+            WorldMap worldMap = new WorldMap(smileCoords, smileFaces, teleporterCoords);
+            while (true)
+            {
+                worldMap.Print();
+                char move = Console.ReadKey().KeyChar;
+                worldMap.Update(move);
+            }
+        }
+
+        // TODO: удалить
+        static void OldMain(string[] args)
         {
             Console.WriteLine("Input the number of smiles");
             int n = Convert.ToInt32(Console.ReadLine());
-            ICoordinates[] objectsWithCoordinates = new ICoordinates[n + 2];
+            IMoveable[] objectsWithCoordinates = new IMoveable[n + 2];
             for (int i = 0; i < objectsWithCoordinates.Length - 2; i++)
             {
 
@@ -70,7 +87,7 @@ namespace ObjectOriented
             }
         }
 
-        private static void PrintObjectWithCoordinates(ICoordinates coordinates)
+        private static void PrintObjectWithCoordinates(IMoveable coordinates)
         {
             Console.SetCursorPosition(coordinates.Coords.X, coordinates.Coords.Y);
             Console.Write(coordinates.ToString());
